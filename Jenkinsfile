@@ -1,18 +1,10 @@
 #!groovy
 
-def getSCMInformation() {
-    def gitBranchName = sh(returnStdout: true, script: 'git name-rev --always --name-only HEAD').trim().replace('remotes/origin/', '')
-
-    return [
-        branch: gitBranchName
-    ]
-}
-
 def project = 'jordan_cooks'
 def appName = 'hello-world-instrumented'
 def feSvcName = "${appName}"
 def namespace = 'monitoring-demo'
-def imageTag = "quay.io/${project}/${appName}:${branch}.v${env.BUILD_NUMBER}"
+def imageTag = "quay.io/${project}/${appName}:canary.v${env.BUILD_NUMBER}"
 
 node {
   checkout scm
