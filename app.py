@@ -27,8 +27,8 @@ def index():
     else:
       # Force a sleep.
       # Comment this for demo purposes
-      app.logger.debug("Forcing a sleep")
-      time.sleep(2)
+      # app.logger.debug("Forcing a sleep")
+      # time.sleep(2)
 
     timestamp2 = str(datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
     app.logger.debug("Finished at: " + timestamp2)
