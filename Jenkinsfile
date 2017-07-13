@@ -4,7 +4,7 @@ def project = 'jordan_cooks'
 def appName = 'hello-world-instrumented'
 def feSvcName = "${appName}"
 def namespace = 'monitoring-demo'
-def imageTag = "quay.io/${project}/${appName}:v${env.BUILD_NUMBER}"
+def imageTag = "quay.io/${project}/${appName}:${env.BRANCH_NAME}.v${env.BUILD_NUMBER}"
 
 node {
   checkout scm
