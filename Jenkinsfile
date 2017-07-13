@@ -4,7 +4,7 @@ def getSCMInformation() {
     def gitBranchName = sh(returnStdout: true, script: 'git name-rev --always --name-only HEAD').trim().replace('remotes/origin/', '')
 
     return [
-        commit: gitCommitSha
+        branch: gitBranchName
     ]
 }
 
